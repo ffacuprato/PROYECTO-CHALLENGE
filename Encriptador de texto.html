@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<!-- saved from url=(0099)file:///C:/Users/Joaquin/FACUNDO/PROGRAMACION/ORACLE%20ONE/ALURA%20INTRO/CHALLENGE/encriptador.html -->
+<html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+         
+        <title>Encriptador de texto</title>
+        <meta name="viewport" content="width=device-width" user-scalable="no" initial-scale="1.0&quot;">
+        <link rel="stylesheet" href="./Encriptador de texto_files/reset.css">
+        <link rel="stylesheet" href="./Encriptador de texto_files/encriptador-style.css">
+        <link href="./Encriptador de texto_files/css2" rel="stylesheet">
+        <link rel="icon" href="file:///C:/Users/Joaquin/FACUNDO/PROGRAMACION/ORACLE%20ONE/ALURA%20INTRO/CHALLENGE/IMAGENES/logo-nuevo.png">
+    
+    </head>
+
+    <body>
+
+        <header>
+            <div class="logo">
+                <h1><img src="./Encriptador de texto_files/Logo-1.png" alt="logo"></h1>
+            </div>
+        </header>
+
+        <main class="contenedor">
+                <div class="input-texto">
+                    <form>
+
+                        <section id="ingresar-texto">
+                            <textarea id="text-area" type="text" required="" placeholder="Ingrese el texto aquí" pattern="[a-z]{1,15}"></textarea>
+                         </section>
+
+                        <p id="solo-minus">Solo letras minúsculas y sin tilde</p> 
+
+                        <section class="botones">
+                            
+                             
+
+                            <input type="submit" value="Encriptar" id="encriptar">
+
+                            <input type="submit" value="Desencriptar" id="desencriptar">
+                        
+                        </section>
+                       
+                    </form> 
+                </div>
+
+                <div class="bloque-munheco" style="height: 40%;">
+
+                  <img src="./Encriptador de texto_files/Muñeco.png" alt="Muñeco" id="imagen-munheco" style="visibility: hidden;">
+                  <p id="ningun-texto" style="visibility: hidden;">Ningun mensaje fue encontrado</p>
+                  <p id="ingrese-el-texto" style="visibility: hidden;">Ingrese el texto que desea encriptar o desencriptar</p>
+                  <p id="resultado-encriptado">hoberlai</p>
+                  <button id="copiar-encriptado" style="visibility: visible;">Copiar</button>
+
+                </div>
+
+                <script>
+                             
+                            document.getElementById('encriptar').onclick=encriptarTexto;
+
+                            document.getElementById('desencriptar').onclick=desencriptarTexto;
+
+                            //funcion encriptar texto
+
+                            function encriptarTexto(evento) {
+
+                                evento.preventDefault();
+                                
+                                var textoSinEncriptar = document.getElementById('text-area').value;
+
+                                if(textoSinEncriptar!=''){
+                                    //ampliar height de bloque-munheco al 40%
+
+                                    var bloquesMunheco = document.getElementsByClassName("bloque-munheco");
+
+                                    var formElement = document.querySelector("form");
+
+                                    var bloquesMunheco = document.getElementsByClassName("bloque-munheco");
+
+                                    if (formElement && bloquesMunheco.length > 0) {
+                                    var formWidth = formElement.offsetWidth;
+                                    if (formWidth <= 800) {
+                                        bloquesMunheco[0].style.height = "40%";
+                                    }
+                                    }
+
+                                    //continua la funcion
+
+                                    var encriptacion = {
+                                        'a': 'ai',
+                                        'e': 'enter',
+                                        'i': 'imes',
+                                        'o': 'ober',
+                                        'u': 'ufat'
+                                    };
+                                    
+                                    var textoEncriptado = textoSinEncriptar.replace(/[aeiou]/gi, function(match) {
+                                        return encriptacion[match.toLowerCase()];
+                                    });
+
+                                    // Ocultar elementos//
+                                    document.getElementById('imagen-munheco').style.visibility = 'hidden';
+                                    document.getElementById('ningun-texto').style.visibility = 'hidden';
+                                    document.getElementById('ingrese-el-texto').style.visibility = 'hidden';
+
+                                    //Texto encriptado a HTML//
+                                    document.getElementById('resultado-encriptado').textContent = textoEncriptado;
+
+                                    //Boton copiar visible//
+                                    document.getElementById('copiar-encriptado').style.visibility='visible';
+
+                                    // Limpiar el campo de text-area//
+                                    //document.getElementById('text-area').value = '';//
+                                }
+                                    
+                                    else{
+                                        //visibilidad de la imagen munheco
+                                        var imagenMunheco = document.getElementById("imagen-munheco");
+
+                                        var formElement = document.querySelector("form");
+
+                                        var formWidth = formElement.offsetWidth;
+
+                                        if (formWidth <= 800) {
+                                            imagenMunheco.style.visibility = "hidden";
+                                        }                         
+                                        //visibilidad de los textos del bloque-munheco
+                                        document.getElementById('ningun-texto').style.visibility='visible';
+                                        document.getElementById('ingrese-el-texto').style.visibility='visible';
+
+                                        //Texto encriptado a HTML//
+                                        document.getElementById('resultado-encriptado').textContent = '';
+                                            
+                                        //Boton copiar  no visible//
+                                        document.getElementById('copiar-encriptado').style.visibility='hidden';
+
+                                    }
+                            }
+
+                            //funcion desencriptar texto
+
+                            function desencriptarTexto(evento) {
+                                evento.preventDefault();
+
+                                var textoEncriptado = document.getElementById('text-area').value;
+
+                                if (textoEncriptado !== '') {
+
+                                    //ampliar height de bloque-munheco al 40%
+
+                                    var bloquesMunheco = document.getElementsByClassName("bloque-munheco");
+
+                                    var formElement = document.querySelector("form");
+
+                                    var bloquesMunheco = document.getElementsByClassName("bloque-munheco");
+
+                                    if (formElement && bloquesMunheco.length > 0) {
+                                    var formWidth = formElement.offsetWidth;
+                                    if (formWidth <= 800) {
+                                        bloquesMunheco[0].style.height = "40%";
+                                    }
+                                    }
+
+                                    //continua la funcion
+                                    
+                                    var desencriptacion = {
+                                        'ai': 'a',
+                                        'enter': 'e',
+                                        'imes': 'i',
+                                        'ober': 'o',
+                                        'ufat': 'u'
+                                    };
+
+                                    var textoDesencriptado = textoEncriptado.replace(/ai|enter|imes|ober|ufat/gi, function(match) {
+                                        return desencriptacion[match.toLowerCase()];
+                                    });
+
+                                    // Ocultar elementos
+                                    document.getElementById('imagen-munheco').style.visibility = 'hidden';
+                                    document.getElementById('ningun-texto').style.visibility = 'hidden';
+                                    document.getElementById('ingrese-el-texto').style.visibility = 'hidden';
+
+                                    // Texto desencriptado a HTML
+                                    document.getElementById('resultado-encriptado').textContent = textoDesencriptado;
+
+                                    // Boton copiar visible
+                                    document.getElementById('copiar-encriptado').style.visibility = 'visible';
+                                } 
+                                    else {
+                                        //visibilidad de la imagen munheco
+                                        var imagenMunheco = document.getElementById("imagen-munheco");
+
+                                        var formElement = document.querySelector("form");
+
+                                        var formWidth = formElement.offsetWidth;
+
+                                        if (formWidth <= 800) {
+                                            imagenMunheco.style.visibility = "hidden";
+                                        }  
+                                        //visibilidad de los textos de bloque-munheco                       
+                                        document.getElementById('ningun-texto').style.visibility = 'visible';
+                                        document.getElementById('ingrese-el-texto').style.visibility = 'visible';
+
+                                        // Texto desencriptado a HTML
+                                        document.getElementById('resultado-encriptado').textContent = '';
+
+                                        // Boton copiar no visible
+                                        document.getElementById('copiar-encriptado').style.visibility = 'hidden';
+
+                                         //ampliar height de bloque-munheco al 40%
+
+                                        var bloquesMunheco = document.getElementsByClassName("bloque-munheco");
+
+                                        var formElement = document.querySelector("form");
+
+                                        var bloquesMunheco = document.getElementsByClassName("bloque-munheco");
+
+                                        if (formElement && bloquesMunheco.length > 0) {
+                                            var formWidth = formElement.offsetWidth;
+                                            if (formWidth <= 800) {
+                                                bloquesMunheco[0].style.height = "40%";
+                                            }
+                                        }
+                                    }
+                            }
+
+                        
+                                document.getElementById('copiar-encriptado').onclick = function() {
+                                    var resultadoEncriptado = document.getElementById('resultado-encriptado');
+                                    
+                                    // Crear un elemento de textarea temporal para copiar el texto encriptado
+                                    var tempTextarea = document.createElement('textarea');
+                                    tempTextarea.value = resultadoEncriptado.textContent;
+                                    document.body.appendChild(tempTextarea);
+                                    
+                                    // Seleccionar el texto dentro del textarea temporal
+                                    tempTextarea.select();
+                                    tempTextarea.setSelectionRange(0, 99999); // Para dispositivos móviles
+                                    
+                                    // Copiar el texto al portapapeles
+                                    document.execCommand('copy');
+                                    
+                                    // Eliminar el textarea temporal
+                                    document.body.removeChild(tempTextarea);
+                                    
+                                    // Alerta o mensaje de éxito
+                                    alert('Texto encriptado copiado al portapapeles.');
+                                };
+                            
+                           
+                </script> 
+
+        </main>
+        
+        <footer>
+            <p class="copyright">Desarrolado por Facundo Prato</p>
+        </footer>
+        
+    
+
+</body></html>
