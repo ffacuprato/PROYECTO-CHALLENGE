@@ -1,0 +1,364 @@
+body {
+    height: 1044px;
+    width: 100%;
+    background: #F3F5FC;
+  }
+  
+  .logo {
+    position: absolute;
+    left: 0.52%;
+    top: 6.2%;
+    
+  }
+  
+  .contenedor {
+    height: 92%;
+    margin: 3%;
+    display: flex;
+  }
+  form{
+    flex: 70%;
+    width: 100%;
+    height: 100%;
+  }
+
+  #ingresar-texto{
+  height: 70%;
+  
+  }
+
+  .input-texto {
+    flex: 72%;
+  }
+  
+  .input-texto textarea[type="text"] {
+    width: 60%;
+    height: 100%;
+    position: relative;
+    top: 12%;
+    left: 16%;
+    text-overflow: clip;
+    background: #F3F5FC;
+    border: none;
+    outline: none;
+    font-size: 32px;
+    align-content: center;
+    color: rgba(10, 56, 113, 1);
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 400px;
+    line-height: 48px; 
+
+  }
+  
+  .botones {
+    width: 80%;
+    position: relative;
+    top: 20%;
+    left: 13.8%;
+    display: flex;
+    flex-direction: row;
+    gap: 1.6%;
+  }
+  
+  .botones input[type="submit"] {
+    width: 50%;
+    height: 67px;
+    position: relative;
+    border: none;
+    border-radius: 24px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    background-color: rgba(10, 56, 113, 1);
+    color: #F3F5FC;
+  }
+  #desencriptar{
+    border: 1px solid;
+    border-color: rgba(10, 56, 113, 1);
+    background-color: transparent;
+    color: rgba(10, 56, 113, 1);
+  }
+  
+  form p {
+    position: relative;
+    top: 18%;
+    left: 13.8%;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+  }
+
+  .bloque-munheco {
+    overflow-wrap: break-word;
+    flex: 28%;
+    background-color: white;
+    border: none;
+    border-radius: 32px;
+    text-align: center;
+  }
+  .bloque-munheco img{
+   position: relative;
+   top: 12.15%;
+  }
+  .bloque-munheco p{
+    position: relative;
+    padding-bottom: 1.1%;
+    top: 22.57%;
+    font-size: larger;
+    font-family: 'Montserrat', sans-serif;
+  }
+  #ningun-texto{
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+    line-height: 120%;
+    color: #343A40;
+  }
+  #ingrese-el-texto{
+    width: 100%;
+    height: 3.3%;
+    font-size: 16px;
+    line-height: 24px;
+    line-height: 150%;
+    margin-right: 0 !important;
+    color: #495057;
+  }
+  #resultado-encriptado {
+    overflow: auto;
+    top: -43%;
+    width: 100%;
+    height: 85%;
+    position: relative;
+    padding: 3%;
+    text-align: left;
+    font-size: 32px;
+    line-height: 36px;
+    vertical-align: top;
+    color: grey;
+}
+  #copiar-encriptado {
+    visibility: hidden;
+    font-size: 24px;
+    width: 85%;
+    height: 8%;
+    position: relative;
+    left: 0%;
+    top: -40%;
+    border: 2px solid rgba(10, 56, 113, 1);
+    border-radius: 30px;
+    background-color: transparent;
+}
+  footer p{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+  }
+  /*media para tablet*/
+  @media screen and (max-width:800px){
+  
+    body{
+      height: 1384px;
+      width: 100%;
+      background: #F3F5FC;
+      padding: 5%;
+    }
+    .contenedor{
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+    }
+    .logo{
+      justify-content: left;
+    }
+    form{
+      width: 100%;
+    }
+    #ingresar-texto {
+      width: 90%;
+      height: 53.3%;
+      position: absolute;
+      top: 20.44%;
+    }
+    .input-texto textarea[type="text"]{
+     width: 100%;
+     height: 100%;
+     position: relative;
+     top: 0;
+     left: 0;
+    
+    }
+    form p {
+      position: relative;
+      top: 87%;
+      left: 1.5%;
+    }
+    .botones{
+      width: 100%;
+      position: relative;
+      left: 0;
+      top: 88%;
+    }
+
+    .botones input[type="submit"] {
+      width: 100%;
+      height: 67px;
+      border: none;
+      margin-top: 5px;
+      text-align: center;
+    }
+    #desencriptar{
+      background:none;
+    }
+    .bloque-munheco {
+      position: relative;
+      top: 3%;
+      flex: none;
+      height: 11.3%;
+      width: 100%;
+      border-radius: 20px;
+      border-color: #F3F5FC;
+      background-color: #FFFFFF;
+      box-shadow: 0 24px 32px -8px rgba(0, 0, 0, 0.08);
+    }
+    .bloque-munheco p {
+      position: absolute;
+      width: inherit;
+    }
+  
+    #ingrese-el-texto{
+      top: 60%;
+    }
+
+    #imagen-munheco{
+        visibility: hidden;
+    }
+    
+    
+    #resultado-encriptado{
+      width: auto;
+    }
+    #copiar-encriptado {
+      visibility: hidden;
+      width: 90%;
+      height: 20%;
+      position: relative;
+      left: 0;
+      top: 15%;
+    }
+    footer{
+    position: relative;
+    top: 15%;
+    text-align: center;
+    width: 100%;
+    height: 5%;
+    }
+    footer p{
+      width: 100%;
+    }
+  }
+  
+    /*media para movil*/
+  @media screen and (max-width:400px){
+    body{
+      height: 933px;
+      width: 100%;
+    }
+    .logo {
+      position: absolute;
+      left: 0;
+      top: 2.57%;
+    }
+    form {
+      top: 5%;
+      height: 100%;
+      width: 100%;
+      position: relative;
+    }
+    #ingresar-texto {
+      width: 100%;
+      position: relative;
+      top: 4%;
+    }
+   
+    .input-texto textarea[type="text"] {
+    width: 100%;
+    top: 14%;
+    }
+    .botones {
+      position: relative;
+      top: 23%;
+      display: flex;
+      flex-direction: column;
+    }
+  #ingresar-texto {
+    width: 90%;
+    height: 53.3%;
+    position: absolute;
+    top: 5%;
+  }
+  
+  
+  .bloque-munheco {
+    height: 20%;
+    position: relative;
+    margin-top: 3%;
+    top: auto;
+    border-radius: 20px;
+    border-color: #F3F5FC;
+    background-color: #FFFFFF;
+  }
+    form p {
+      position: relative;
+      top: 80%;
+    }
+    #ningun-texto{
+      font-size: 28px;
+      top: 15%;
+    }
+    #ingrese-el-texto{
+      font-size: 16px;
+      top: 65%;
+    }#copiar-encriptado{
+      top: 87%;
+      left: 85%;
+      background-color: #F3F5FC;
+    }
+
+    #resultado-encriptado {
+      width: auto;
+    }
+    #copiar-encriptado{
+      visibility: hidden;
+      width: 90%;
+      height: 20%;
+      position: absolute;
+      left: 0%;
+    }
+    #copiar-encriptado {
+      visibility: hidden;
+      width: 90%;
+      height: 20%;
+      position: relative;
+      left: 0;
+      background-color: transparent;
+      top: -13%;
+    }
+    footer{
+      text-align: center;
+      position: relative;
+      top: 15%;
+      text-align: center;
+      width: 100%;
+      height: 5%;
+      }
+    footer p{
+      width: 100%;
+    }
+
+  }
